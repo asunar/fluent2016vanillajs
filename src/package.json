@@ -1,0 +1,17 @@
+{
+  "name": "fluent2016vanillajs",
+  "version": "1.0.0",
+  "description": "React from scratch in vanillajas",
+  "main": "index.html",
+  "scripts": {
+    "build": "del js\\bundle.js && babel .\\js --out-file js\\bundle.js",
+    "test": "echo notest",
+		"deploy": "npm run build && surge .\\www --domain reactfromscratch.surge.sh && start chrome reactfromscratch.surge.sh"
+  },
+  "author": "Alper Sunar",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.4.0",
+    "babel-plugin-transform-react-jsx": "^6.4.0"
+  }
+}
