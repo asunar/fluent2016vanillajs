@@ -14,16 +14,6 @@
         parentElement.appendChild(children);
     }
 
-		function getUrlVars() {
-				var vars = [], hash;
-				var hashes = window.location.href.slice(window.location.href.lastIndexOf('?') + 1).split('&');
-				for (var i = 0; i < hashes.length; i++) {
-						hash = hashes[i].split('=');
-						vars.push(hash[0]);
-						vars[hash[0]] = hash[1];
-				}
-				return vars;
-		}
 	
     function route() {
         var hash = window.location.hash;
@@ -35,6 +25,8 @@
         };
 
 				var showAuthor = function(){
+
+					//get it from data store	
 				var authors = [
 	{"id":"cory-house","firstName":"Cory", "lastName": "House"},
 	{"id":"scott-allen","firstName":"Scott", "lastName": "Allen"}, {"id":"dan-wahlin","firstName":"Dan", "lastName": "Wahlin"},];
@@ -70,19 +62,13 @@ var showAbout = function(){
             return;
         }
 
-
-        var hashWithoutQueryString = hash;
-        if (hash.lastIndexOf('?') !== -1) {
-            hashWithoutQueryString = hash.substring(0, hash.lastIndexOf('?'))
-        }
-
         var routeTable = {
 					'##': showHome,
 					'#/authors' : showAuthor,
 					'#/about' : showAbout,
         };
 
-        var viewFunction = routeTable[hashWithoutQueryString] || routeTable['##'];
+        var viewFunction = routeTable[hash] || routeTable['##'];
         viewFunction();
     }
     route();
