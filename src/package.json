@@ -1,17 +1,19 @@
 {
   "name": "fluent2016vanillajs",
   "version": "1.0.0",
-  "description": "React from scratch in vanillajas",
+  "description": "React from scratch in vanillajs",
   "main": "index.html",
   "scripts": {
-    "build": "del js\\bundle.js && babel .\\js --out-file js\\bundle.js",
-    "test": "echo notest",
-		"deploy": "npm run build && surge .\\www --domain reactfromscratch.surge.sh && start chrome reactfromscratch.surge.sh"
+    "start": "del js\\bundle.js && babel .\\js --out-file js\\bundle.js && gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alper Sunar",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.4.0",
-    "babel-plugin-transform-react-jsx": "^6.4.0"
+    "babel-plugin-transform-react-jsx": "^6.4.0",
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-open": "^1.0.0"
   }
 }
