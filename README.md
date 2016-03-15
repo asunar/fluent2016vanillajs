@@ -1,4 +1,5 @@
 # Building the sample React app without React (with JSXDOM)
+I took some shortcuts on non-essential things (like dumping all js files in one folder and a minimal gulp setup) in the interest of time which I will rectify soon.
 
 #  React and Flux from Scratch - Fluent 2016
 
